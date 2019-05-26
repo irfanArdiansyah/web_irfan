@@ -99,106 +99,73 @@
         <div class="col-lg-8">
           <div class="card animated fadeInLeftTiny animation-delay-5">
             <div class="card-block card-block-big">
-              <h1 class="no-mt">Data Manipulation Language</h1>
+              <h1 class="no-mt">Group And Sorting</h1>
               <div class="mb-4">
                 by
                 <a href="javascript:void(0)">Irfan</a> in
                 <a href="javascript:void(0)" class="ms-tag ms-tag-info">Design</a>
                 <span class="ml-1 d-none d-sm-inline">
                   <i class="zmdi zmdi-time mr-05 color-info"></i>
-                  <span class="color-medium-dark">Mei 13, 2019</span>
+                  <span class="color-medium-dark">Mei 26, 2019</span>
                 </span>
                 <span class="ml-1">
                   <i class="zmdi zmdi-comments color-royal mr-05"></i> 1020</span>
               </div>
               <img src="assets/img/demo/post4.jpg" alt="" class="img-fluid mb-4">
-              <img src="assets/img/demo/DML.png" width="1000" alt="" class="img-fluid" style="margin-bottom:30px;">
-              <p>DML (Data Manipulation Language) DML adalah kelompok perintah yang berfungsi untuk memanipulasi data
-                dalam basis data, misalnya untuk pengambilan, penyisipan, pengubahan dan penghapusan data.
+              <img src="assets/img/demo/GroupNSort.png" width="1000" alt="" class="img-fluid"
+                style="margin-bottom:30px;">
+              <p>Group and Sort adalah teknik query sql php yang mana kita mengelompokan data atau pun mengurutkan data
+                sesuai syntax yang kita buat atau variabel yang kita tentukan.
               </p>
-              <strong>Tutorial Pemakaian DML</strong>
-              <p>A.Sebelum kita mengeksekusi INSERT, UPDATE, DELETE dan SELECT, pastikan xampp-control(mysql & Apache)
-                anda start
-                dan
-                aktif</p>
-              <img src="./assets/img/demo/XamppOn.png" alt="" class="img-fluid" style="margin-bottom:30px;">
-              <p>B.Setelah Xampp running seperti gambar diatas, selanjutnya bukalah command promt untuk masuk ke mysql
-                melalui command line dengan cara : menekan tombol windows + R bersamaan, lalu tulis cmd seperti gambar
-                dibawah ini</p>
-              <img src="./assets/img/demo/cmd.png" alt="" class="img-fluid" style="margin-bottom:30px;">
-              <img src="./assets/img/demo/cmdOpen.png" alt="" class="img-fluid" style="margin-bottom:30px;">
-              <p>C.selanjutnya, kita akan masuk kedalam folder direktori mysql untuk masuk ke database mysql. didalam
-                command line, untuk mengesekusi query sql kita harus masuk kedalam database mysql itu dengan membuka
-                koneksi di folder direktori mysql itu sendiri. seperti gambar dibawah ini:</p>
-              <img src="./assets/img/demo/cmdOpen.png" alt="" class="img-fluid" style="margin-bottom:30px;">
-              <p>Masukkan perintah dibawah ini untuk masuk kedalam direktori mysql</p>
-              <img src="./assets/img/demo/cmdCon.png" alt="" class="img-fluid" style="margin-bottom:30px;">
-              <p>jika sudah maka tampilan nya sekarang adalah seperti ini:</p>
-              <img src="./assets/img/demo/cmdDone.png" alt="" class="img-fluid" style="margin-bottom:30px;">
-              <p>Selamat Kamu berhasil membuka koneksi ke mysql, disini kita bisa melakukan banyak query mysql, namun
-                dalam blog DML kali ini kita akan belajar hal hal dibawah ini saja:</p>
+              <strong>Tutorial Pemakaian Agregat and Pattern Match</strong>
+              <p>Seperti biasa, pastikan xampp aktif dan mysql aktif, kita akan menggunakan command line di tutorial
+                kali ini.</p>
+              <p>Adapun yang kita bahas kali ini ialah :</p>
 
+              <strong>GROUP</strong>
               <ol>
-                <li>Insert</li>
-                <li>Delete</li>
-                <li>Update</li>
-                <li>Select</li>
+                <li>Grouping</li>
+                <li>Group dengan Having</li>
+                <li>Order By</li>
               </ol>
 
-              <blockquote>Didalam blog DDl kamu telah belajar cara create database, sebelum masuk ke DML query buatlah
-                terlebih dahulu database bernama nilai_mahasiswa, setelah itu Use database tersebut seperti gambar
-                dibawah ini:</blockquote>
-
-              <img src="./assets/img/demo/useDatabase.png" alt="" class="img-fluid" style="margin-bottom:30px;">
+              <blockquote>Didalam blog sebelumnya, kamu telah belajar cara create database beserta tabel tabel nya lalu
+                mencari dengan ketentuan spesifik atau agregate pattern matching,
+                sebelum masuk ke Group and Sort query Buatlah Sebuah database dan tabel dengan 5 data didalam
+                tabel nya. (Jika lupa query create database dan create table bisa dibaca lagi <a
+                  href="./DML-Post.html">DML</a> dan <a href="./DDL-Post.html">DDL</a>)
+              </blockquote>
               <br>
-              <strong>INSERT</strong>
-              <p>Perintah INSERT di DML digunakan untuk Menambah sebuah Record data baru kedalam sebuah tabel, dalam
-                kali ini kita akan menggunakan table <strong>mahasiswa</strong>. Jika tabel mahasiswa belum ada, buatlah
-                terlebih dahulu table mahasiswa dengan menggunakan perintah <a href="./DDL-Post.html">DDL</a> Create
-                Table sebelumnya,<br></p>
-
-              <p>Jika sudah dicreate, pastikan sama seperti gambar dibawah ini: <br>
-                <img src="./assets/img/demo/createtable.png" alt="" class="img-fluid" style="margin-bottom:30px;">
-
-                <br><strong>Show databases;</strong><br><br>
-                <img src="./assets/img/demo/showtables.png" alt="" class="img-fluid" style="margin-bottom:30px;">
-                <br>
-                <strong style="padding:10px;background:rgba(128, 128, 128, 0.5)">Note: Jangan Lupa tanda titik koma (;)
-                  setiap melakukan perintah mysql di command line </strong>
-                <br>
-                <p>
-                  <br>
-                  <strong>Perintah Insert</strong> yaitu "Insert Into nama_tabel values(kolom_1,kolom_2...)",
-                  <br>lakukan lah perintah dibawah ini:
-                </p>
-                <img src="./assets/img/demo/DML/insert.png" alt="" class="img-fluid" style="margin-bottom:30px;">
-              </p>
+              <strong>Grouping</strong>
+              <p>Perintah Grouping Di SQL , yaitu mengelompokan kolom dengan data yang dicari, misal nya
+                mengelompokkan Data dengan
+                jurusan berikut ini</p>
+              <p>Perintah Group: <br><strong>select nama_kolom, perintah_aggregat(nama_kolom) from nama_tabel group by
+                  nama_kolom</strong></p>
+              <img src="./assets/img/demo/GNP/Group.png" alt="" class="img-fluid" style="margin-bottom:30px;">
               <br>
-              <strong>Update</strong>
-              <p>Perintah Update Di DML , yaitu mengubah isi data dalam table per row nya, misal nya mengubah kolom nama
-                di table mahasiswa berikut ini:</p>
-              <p>Perintah Update: <br><strong>update nama_tabel set nama="value Baru" where
-                  npm="npm_yang_hendak_diupdate"</strong></p>
-              <img src="./assets/img/demo/DML/update.png" alt="" class="img-fluid" style="margin-bottom:30px;">
-              <br>
-              <strong>Select</strong>
-              <p>Perintah Select Di DML , yaitu menampilkan data dalam table, misal nya menampilkan Data dengan npm
+              <strong>Group dengan Having</strong>
+              <p>Perintah ini Di SQL , mengelompokan kolom dengan data yang dicari berdasarkan isi data kolom yang kita
+                tentuin, contohnya
                 berikut ini</p>
-              <p>Perintah Select: <br><strong>Select kolom_yang_dipilih/* from nama_tabel"</strong></p>
-              <img src="./assets/img/demo/DML/select.png" alt="" class="img-fluid" style="margin-bottom:30px;">
+              <p>Perintah Having: <br><strong>select nama_kolom, perintah_aggregate(nama_kolom) from nama_tabel group by
+                  nama_kolom having perintah_aggregate(nama_field)="Isi_data_nya"</strong></p>
+              <img src="./assets/img/demo/GNP/Having.png" alt="" class="img-fluid" style="margin-bottom:30px;">
               <br>
-              <strong>Delete</strong>
-              <p>Perintah Delete Di DML , yaitu Menghapus row field data dalam table, misal nya menghapus Data dengan
-                npm berikut ini</p>
-              <p>Perintah Delete: <br><strong>Delete from nama_tabel where npm="npm_yang_hendak_didelete"</strong></p>
-              <img src="./assets/img/demo/DML/delete.png" alt="" class="img-fluid" style="margin-bottom:30px;">
-              <p>jika kita lihat table mahasiswa nya lagi, Hasilnya akan seperti ini:</p>
-              <img src="./assets/img/demo/DML/selectAfterDelete.png" alt="" class="img-fluid"
-                style="margin-bottom:30px;">
+              <strong>Order By</strong>
+              <p>Perintah Order By Di SQL , yaitu mengurutkan data kolom yang dicari order by ada dua ketentuan yang
+                bisa kita pakai yaitu desc dan asc, artinya kita bisa mengurutkan berdasarkan nilai terbesar dan
+                terkecil, contohnya mengurutkan npm dengan nilai terbesar.
+              </p>
+              <p>Perintah Order By: <br><strong>select nama_kolom from nama_tabel order
+                  by nama_kolom desc</strong></p>
+              <img src="./assets/img/demo/GNP/Order By desc.png" alt="" class="img-fluid" style="margin-bottom:30px;">
               <br>
               <strong>Kesimpulan</strong>
-              <p>Selamat, kamu berhasil melakukan perintah DML mysql. dengan menggunakan perintah perintah diatas kita
-                dapat melakukan perubahan di dalam Table mysql.</p>
+              <p>Selamat, kamu berhasil melakukan perintah Group dan Sort mysql. dengan menggunakan perintah
+                perintah diatas kita
+                dapat dengan mudah Mengelompokkan dan mengurutkan Pencarian di dalam Table mysql secara tepat dan
+                tertentu.</p>
             </div>
           </div>
         </div>
